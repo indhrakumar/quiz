@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #startpage a {
+        height: 50px;
+        width: 150px;
+        background-color: cyan;
+        border-radius: 25px;
+        box-shadow: 0 0 10px cyan;
+        font-weight: bold;
+        font-size: 18px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="h-[80px] w-full py-4 bg-black">
+      <h1
+        class="text-4xl text-[#28bf87] font-bold text-center italic"
+        style="text-shadow: 0 0 30px">
+        Quiz Game
+      </h1>
+    </header>
+    <div
+      id="startpage"
+      class="fixed z-[999] bg-gray-900 w-full h-[calc(100vh-80px)] flex flex-col justify-center items-center">
+      <button
+        id="start"
+        class="bg-[#28bf87] hover:animate-pulse text-black font-bold py-2 px-4 rounded italic hover:bg-[#209d6b] shadow-[0_0_30px_#209d6b]">
+        Start Quiz
+      </button>
+      <div class="p-5 hidden flex flex-col gap-10" id="end">
+        <h2 class="text-4xl font-bold text-center text-white">Over</h2>
+        <a href="" class="px-3 py-2 flex items-center justify-center"
+          >Restart</a
+        >
+      </div>
+      <div id="finalscore"></div>
+    </div>
+
+    <div
+      id="container"
+      class="bg-gray-900 w-full h-[calc(100vh-80px)] flex flex-col items-center gap-10 p-10 relative">
+      <div class="w-full flex">
+        <span id="q-counter" class="ms-auto text-xl text-white"
+          >Question 0/0</span
+        >
+      </div>
+
+      <div
+        id="question"
+        class="w-full bg-black rounded-3xl flex gap-3 items-center">
+        <span
+          id="numb"
+          class="qno w-[100px] text-center text-red-600 font-bold text-2xl"
+          >01</span
+        >
+        <h2
+          id="q"
+          class="text-2xl text-cyan-300 w-full font-bold text-center p-4">
+          Question will appear here
+        </h2>
+      </div>
+      <div
+        id="answer"
+        class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-7">
+        <button
+          data-option="a"
+          class="bg-gray-600 optbtn text-cyan-300 font-bold text-2xl rounded-full flex items-center justify-center p-5">
+          Option A
+        </button>
+        <button
+          data-option="b"
+          class="bg-gray-600 optbtn text-cyan-300 font-bold text-2xl rounded-full flex items-center justify-center p-5">
+          Option B
+        </button>
+        <button
+          data-option="c"
+          class="bg-gray-600 optbtn text-cyan-300 font-bold text-2xl rounded-full flex items-center justify-center p-5">
+          Option C
+        </button>
+        <button
+          data-option="d"
+          class="bg-gray-600 optbtn text-cyan-300 font-bold text-2xl rounded-full flex items-center justify-center p-5">
+          Option D
+        </button>
+      </div>
+      <div class="w-full p-5 flex">
+        <span
+          id="score"
+          class="score px-5 py-2 text-center rounded-3xl bg-green-500 text-white font-bold text-xl mx-auto"
+          >⭐Score: 000</span
+        >
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
